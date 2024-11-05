@@ -1,0 +1,202 @@
+<!DOCTYPE >
+<html>
+    <head>
+        <title>simple calculators</title>
+    </head>
+    <style>
+        .btn{
+            width: 40px;
+            height: 40px;
+            background-color: cornflowerblue;
+            font-size: xx-large;
+        }
+        .inp{
+            width: 200px;
+            height: 30px;
+            background-color: cornsilk;
+            color: darkblue;
+        }
+    </style>
+    <body>
+        <fieldset>
+            <center>
+            <input style="width: 200px; height: 30px; font-weight: lighter;" id="auto"
+             readonly style="border: none;"/><br>
+            <input class="inp" id="myDisplay"  placeholder="0" style="text-align: right;" readonly /><br><br>
+            <button class="btn" id="seven" value="7" onclick="do7();">7</button>
+            <button class="btn" id="eight" value="8" onclick="do8();">8</button>
+            <button class="btn" id="nine" value="9" onclick="do9();">9</button>
+            <button class="btn" id="plus" onclick="doPlus();">+</button><br><br>
+            <button class="btn" id="four" value="4" onclick="do4();">4</button>
+            <button class="btn" id="five" value="5" onclick="do5();">5</button>
+            <button class="btn" id="six" value="6" onclick="do6();">6</button> 
+            <button class="btn" id="minus" onclick="doMinus();">-</button><br><br>
+            <button class="btn" id="zero" value="0" onclick="do0();">0</button>
+            <button class="btn" id="one" value="1" onclick="do1();">1</button>
+            <button class="btn" id="two" value="2" onclick="do2();">2</button>
+            <button class="btn" id="three" value="3" onclick="do3();">3</button><br><br>
+            <button class="btn" id="multiply" onclick="doMulti();">*</button>
+            <button class="btn" id="division" onclick="doQuot();">/</button>
+            <button class="btn" id="equals" onclick="doEquals();">=</button>
+            <button class="btn" id="clear" onclick="doClear();">C</button><br><br>
+            <button class="btn" style="width: 90px;" onclick="doErase();">DEL</button>
+            </center>
+            <script>
+                setOne = 0;
+                setTwo = 0;
+                strOpr = "";
+                function do8(){
+                    var num8 = document.getElementById("eight").value;
+                    document.getElementById("myDisplay").value = document.getElementById("myDisplay").value + num8;
+                }     
+                function do9(){
+                    var num9 = document.getElementById("nine").value ;
+                    document.getElementById("myDisplay").value = document.getElementById("myDisplay").value + num9;
+                }  
+                function do7(){
+                    var num7 = document.getElementById("seven").value ;
+                    document.getElementById("myDisplay").value = document.getElementById("myDisplay").value + num7;
+                }           
+                function do6(){
+                    var num6 = document.getElementById("six").value ;
+                    document.getElementById("myDisplay").value = document.getElementById("myDisplay").value + num6;
+                }           
+                function do5(){
+                    var num5 = document.getElementById("five").value ;
+                    document.getElementById("myDisplay").value = document.getElementById("myDisplay").value + num5;
+                }           
+                function do4(){
+                    var num4 = document.getElementById("four").value ;
+                    document.getElementById("myDisplay").value = document.getElementById("myDisplay").value + num4;
+                }           
+                function do3(){
+                    var num3 = document.getElementById("three").value ;
+                    document.getElementById("myDisplay").value = document.getElementById("myDisplay").value + num3;
+                }     
+                function do2(){
+                    var num2 = document.getElementById("two").value ;
+                    document.getElementById("myDisplay").value = document.getElementById("myDisplay").value + num2;
+                }    
+                function do1(){
+                    var num1 = document.getElementById("one").value ;
+                    document.getElementById("myDisplay").value = document.getElementById("myDisplay").value + num1;
+                }          
+                function do0(){
+                    var num0 = document.getElementById("zero").value ;
+                    document.getElementById("myDisplay").value = document.getElementById("myDisplay").value + num0;
+                }                                  
+                function doPlus(){
+                    if(setOne == 0){
+                        setOne = document.getElementById("myDisplay").value;
+                        document.getElementById("myDisplay").value = "";
+                        strOpr = "add"
+                        return;
+                    };
+                    if(setOne > 0){
+                        setTwo = document.getElementById("myDisplay").value;
+                        setOne = Number(setOne);
+                        setTwo = Number(setTwo);
+                        var ans = setOne + setTwo;
+                        document.getElementById("auto").value = ans;
+                        document.getElementById("myDisplay").value = "";
+                        setOne = ans;
+                    }
+                }
+                function doMinus(){
+                    if(setOne == 0){
+                        setOne = document.getElementById("myDisplay").value;
+                        document.getElementById("myDisplay").value = "";
+                        strOpr = "subtract"
+                        return;
+                    };
+                    if(setOne > 0){
+                        setTwo = document.getElementById("myDisplay").value;
+                        setOne = Number(setOne);
+                        setTwo = Number(setTwo);
+                        var ans = setOne - setTwo;
+                        document.getElementById("auto").value = ans;
+                        document.getElementById("myDisplay").value = "";
+                        setOne = ans;
+                    }
+                   
+                }
+                function doMulti(){
+                    if(setOne == 0){
+                        setOne = document.getElementById("myDisplay").value;
+                        document.getElementById("myDisplay").value = "";
+                        strOpr = "multiply"
+                        return;
+                    };
+                    if(setOne > 0){
+                        setTwo = document.getElementById("myDisplay").value;
+                        setOne = Number(setOne);
+                        setTwo = Number(setTwo);
+                        var ans = setOne * setTwo;
+                        document.getElementById("auto").value = ans;
+                        document.getElementById("myDisplay").value = "";
+                        setOne = ans;
+                    }  
+                }
+                function doQuot(){
+                    if(setOne == 0){
+                        setOne = document.getElementById("myDisplay").value;
+                        document.getElementById("myDisplay").value = "";
+                        strOpr = "division"
+                        return;
+                    };
+                    if(setOne > 0){
+                        setTwo = document.getElementById("myDisplay").value;
+                        setOne = Number(setOne);
+                        setTwo = Number(setTwo);
+                        var ans = setOne / setTwo;
+                        document.getElementById("auto").value = ans;
+                        document.getElementById("myDisplay").value = "";
+                        setOne = ans;
+                    }
+                }   
+                function doEquals(){
+                    setTwo = document.getElementById("myDisplay").value;
+                    if(strOpr == "add"){
+                        setOne = Number(setOne);
+                        setTwo = Number(setTwo);
+                        var ans = setOne + setTwo;
+                        document.getElementById("myDisplay").value = ans;
+                    };
+                    if(strOpr == "subtract"){
+                        setOne = Number(setOne);
+                        setTwo = Number(setTwo);
+                        var ans = setOne - setTwo;
+                        document.getElementById("myDisplay").value = ans;
+                    };
+                    if(strOpr == "multiply"){
+                        setOne = Number(setOne);
+                        setTwo = Number(setTwo);
+                        var ans = setOne * setTwo;
+                        document.getElementById("myDisplay").value = ans;
+                    };
+                    if(strOpr == "division"){
+                        setOne = Number(setOne);
+                        setTwo = Number(setTwo);
+                        var ans = setOne / setTwo;
+                        document.getElementById("myDisplay").value = ans;
+                    };
+                   }
+                   function doErase(){
+                    var myText = document.getElementById("myDisplay").value;
+                    var myLen = myText.length;
+                    myLen = myLen - 1;
+                    myDel = myText.slice(0,myLen);
+                    document.getElementById("myDisplay").value =myDel;
+                   }
+                function doClear(){
+                       document.getElementById("myDisplay").value = "";
+                       document.getElementById("auto").value = "";
+                       setOne = "";
+                       setTwo = "";
+                       ans = "";
+                       auto = "";
+                   }
+            </script>  
+        </fieldset>
+    </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Simple Calculator</title>
+    </head>
+    <body>
+    
+    <center>
+        <input type="number" id="firstnum" placeholder="Enter First" title="Enter first number" required /><br>
+        <input type="number" id="secondnum" placeholder="Enter Second" title="Enter second number" required /><br>
+        <input type="number" id="answer" /><br><br>
+        <button onclick="adder();">Add</button><br><br>
+        <button onclick="multi();">Multiply</button><br><br>
+        <button onclick="divi();">Divide</button><br><br>
+        <button onclick="subt();">Subtract</button><br><br>
+    </center>
+    
+        <script>
+            function adder(){
+                var firstNum = document.getElementById("firstnum").value;
+                var secondNum = document.getElementById("secondnum").value;
+                firstNum = Number(firstNum);
+                secondNum = Number(secondNum);
+                var ans = firstNum + secondNum;
+                document.getElementById("answer").value = ans;
+            }
+            function multi(){
+                var firstNum = document.getElementById("firstnum").value;
+                var secondNum = document.getElementById("secondnum").value;
+                firstNum = Number(firstNum);
+                secondNum = Number(secondNum);
+                var ans = firstNum * secondNum;
+                document.getElementById("answer").value = ans;
+            }
+            function divi(){
+                var firstNum = document.getElementById("firstnum").value;
+                var secondNum = document.getElementById("secondnum").value;
+                firstNum = Number(firstNum);
+                secondNum = Number(secondNum);
+                var ans = firstNum / secondNum;
+                document.getElementById("answer").value = ans;
+            }
+            function subt(){
+                var firstNum = document.getElementById("firstnum").value;
+                var secondNum = document.getElementById("secondnum").value;
+                firstNum = Number(firstNum);
+                secondNum = Number(secondNum);
+                var ans = firstNum - secondNum;
+                document.getElementById("answer").value = ans;
+            }
+        </script>
+    </body>
+</html>

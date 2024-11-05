@@ -1,0 +1,59 @@
+<!DOCTYPE >
+<html>
+    <head>
+        <title>basic pay</title>
+    </head>
+    <body>
+        <center>
+         <fieldset>
+          <legend>Employee Data</legend>
+          <label for="employee data">Employee Data </label>
+          <input type="text" placeholder="EMPLOYEE NAME" title="2 names min" required>
+         </fieldset>
+         <fieldset>
+             <legend>Select Dept</legend>
+             <select name="depts" required>
+                 <option value="">--select depts--</option>
+                 <option value="accounts">accounts</option>
+                 <option value="human resource">human resource</option>
+                 <option value="ict">ict</option>
+                 <option value="sales">Sales</option>
+                 <option value="stores">Stores</option>
+             </select>
+         </fieldset>
+         <fieldset>
+            <legend>Hours</legend>
+            <label for="hours worked">Hours worked</label>
+            <input type="number" id="hoursworked" place holder="hours worked" required>
+            <br><hr>
+            <label for="hourly rate">Hourly rate</label>
+            <input type="number" id="hourlyrate" place holder="hourly rate" required>
+          </fieldset>
+          <fieldset>
+              <legend>Pay</legend>
+              <label for="basicpay" >Basic Pay</label>
+              <input type="number" id="basicpay" readonly /><br><hr>
+              <label for="totaldeductions" >Total Deductions</label>
+              <input type="number" id="totaldeductions" placeholder="total deductions" title="enter dedcuctions" requied>
+              <br><hr>
+              <label for="netpay" >Net Pay</label>
+              <input type="number" id="netpay" readonly />
+          </fieldset>
+              <button onclick="computepay();">compute pay</button>   
+        </center>
+        <script>
+            function computepay(){
+                 var hoursWorked = document.getElementById("hoursworked").value;
+                 var hourlyRate = document.getElementById("hourlyrate").value;
+                 hoursWorked = Number(hoursWorked);
+                 hourlyRate = Number(hourlyRate);
+                 var basicPay = hoursWorked * hourlyRate;
+                 var deductions = document.getElementById("totaldeductions").value;
+                 deductions = Number(deductions);
+                 var netPay = basicPay - deductions;
+                 document.getElementById("basicpay").value = basicPay;
+                 document.getElementById("netpay").value = netPay;
+            }   
+        </script>
+    </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Print Names</title>
+    </head>
+    <body>
+    <input type="text" placeholder="Name" id="myName" /><br><br>
+    <button onclick="doAdd();" >add name</button>
+    <button onclick="doPrint();">display name</button><br><br>
+    <textarea  id="answer" rows="10" cols="50" readonly ></textarea>
+    <script>
+        let myArray = [];
+        function doAdd(){
+         let Name= document.getElementById("myName").value;
+         myArray.push(Name);
+         document.getElementById("myName").value = "";
+        }
+        function doPrint(){
+            var Name = myArray
+            document.getElementById("answer").value = myArray;
+        }
+    </script>
+    </body>
+</html>

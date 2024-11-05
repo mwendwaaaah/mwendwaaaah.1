@@ -1,0 +1,37 @@
+<!DOCTYPE html/>
+<html>
+    <head>
+        <title>village market cinema hall</title>
+    </head>
+ <body>
+    <fieldset>
+        <input placeholder="age" type="number" id="Age" title="enter viewers age">
+        <button type="submit" onclick="compute();">check</button>
+        <script>
+            function compute(){
+                var aGe = document.getElementById("Age").value;
+                aGe = Number(aGe)
+                if(aGe < 6){
+                   alert("FREE ENTRY")
+                   return;
+                    }
+                    if(aGe < 13){
+                        alert("$2.50")
+                    return;
+                    }
+                    if(aGe < 18){
+                        alert("$3.75")
+                    return;
+                    }
+                    if(aGe < 65){
+                        alert("$5.25")
+                    return;
+                    }
+                    else{
+                        alert("FREE ENTRY")
+                    }
+            }
+        </script>
+    </fieldset>
+ </body>
+</html>

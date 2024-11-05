@@ -1,0 +1,25 @@
+<DOCTYPE html>
+    <html>
+        <head>
+            <title>AGEGROUP</title>
+        </head>
+        <body>
+            <fieldset>
+                <input id="entAge" placeholder="0" title="enter age" type="number"/>
+                <button type="submit" onclick="doCheck();">CHECK</button>
+                <script>
+                    function doCheck(){
+                        var Age = document.getElementById("entAge").value ;
+                        Age = Number(Age);
+                        if(Age < 18){
+                            alert("ACCESS DENIED!!! ");
+
+                        }
+                        else{
+                            alert("ACCESS GRANTED  :)");
+                        }
+                    }
+                </script>
+            </fieldset>
+        </body>
+    </html>

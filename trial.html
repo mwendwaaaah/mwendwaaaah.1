@@ -1,0 +1,100 @@
+<!DOCTYPE = html >
+<html>
+    <head>
+        <title>simple calculator</title>
+    </head>
+    <body>
+        <fieldset>
+            <center>
+            <input id="auto" readonly style="border: none;"/><br>
+            <input id="myDisplay"  placeholder="0" style="text-align: right;" readonly /><br><br>
+            <button id="seven" value="7" onclick="do7();">7</button>
+            <button id="eight" value="8" onclick="do8();">8</button>
+            <button id="nine" value="9" onclick="do9();">9</button>
+            <button id="plus" onclick="doPlus();">+</button><br><br>
+            <button id="six" value="6" onclick="do6();">6</button> 
+            <button id="minus" onclick="doMinus();">-</button><br><br>
+            <button id="equals" onclick="doEquals();">=</button>
+            <button id="clear" onclick="doClear();">C</button>
+            </center>
+        </fieldset>
+            <script>
+                setOne = 0;
+                setTwo = 0;
+                strOpr = "";
+                function do8(){
+                    var num8 = document.getElementById("eight").value;
+                    document.getElementById("myDisplay").value = document.getElementById("myDisplay").value + num8;
+                }     
+                function do9(){
+                    var num9 = document.getElementById("nine").value ;
+                    document.getElementById("myDisplay").value = document.getElementById("myDisplay").value + num9;
+                }  
+                function do7(){
+                    var num7 = document.getElementById("seven").value ;
+                    document.getElementById("myDisplay").value = document.getElementById("myDisplay").value + num7;
+                }           
+                function do6(){
+                    var num6 = document.getElementById("six").value ;
+                    document.getElementById("myDisplay").value = document.getElementById("myDisplay").value + num6;
+                } 
+                function doPlus(){
+                    if(setOne == 0){
+                        setOne = document.getElementById("myDisplay").value;
+                        document.getElementById("myDisplay").value = "";
+                        strOpr = "add"
+                        return;
+                    };
+                    if(setOne > 0){
+                        setTwo = document.getElementById("myDisplay").value;
+                        setOne = Number(setOne);
+                        setTwo = Number(setTwo);
+                        var ans = setOne + setTwo;
+                        document.getElementById("auto").value = ans;
+                        document.getElementById("myDisplay").value = "";
+                        setOne = ans;
+                    }
+                }
+                function doMinus(){
+                    if(setOne == 0){
+                        setOne = document.getElementById("myDisplay").value;
+                        document.getElementById("myDisplay").value = "";
+                        return;
+                    };
+                    if(setOne > 0){
+                        setTwo = document.getElementById("myDisplay").value;
+                        setOne = Number(setOne);
+                        setTwo = Number(setTwo);
+                        var ans = setOne - setTwo;
+                        document.getElementById("myDisplay").value = ans;
+                        document.getElementById("myDisplay").value = "";
+                        setOne = ans;
+                    }
+                }
+                function doEquals(){
+                    setTwo = document.getElementById("myDisplay").value;
+                    if(strOpr == "add"){
+                        setOne = Number(setOne);
+                        setTwo = Number(setTwo);
+                        var ans = setOne + setTwo;
+                        document.getElementById("myDisplay").value = ans;
+                    };
+                    if(strOpr == "subtract"){
+                        setOne = Number(setOne);
+                        setTwo = Number(setTwo);
+                        var ans = setOne - setTwo;
+                        document.getElementById("myDisplay").value = ans;
+                    }
+                    document.getElementById("auto").value = ans;
+                }
+                    function doClear(){
+                       document.getElementById("myDisplay").value = "";
+                       document.getElementById("auto").value = "";
+                       setOne = "";
+                       setTwo = "";
+                       ans = "";
+                       auto = "";
+                   }
+            </script>  
+    </body>
+</html>

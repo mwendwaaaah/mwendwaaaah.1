@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Registration</title>
+       
+    </head>
+    <body>
+        <h3><a href="library.html"><button class="btn">Home Page</button></a>
+            <a href="children.html">Children</a> |
+            <a href="fictional.html">Fiction</a> |
+            <a href="autobiograhies.html">Autobiograhies</a> |
+            <a href="registrationform.html">Registration</a>|</h3>
+        <hr />
+        <h1>Registration Details</h1>
+        <hr />
+        <form>
+            <fieldset>
+                <legend>Student Bio Data</legend>
+                <label for="student_name">Student Name</label><br>
+                <input type="text" id="student_name" title="enter both names" required><br>
+                <label for="birthdate">Date of Birth</label><br>
+                <input style="background-color: lightblue;" type="date" id="birthdate" required><br>
+                </fieldset>
+                <fieldset>
+                <legend>Select Gender</legend>
+               <input type="radio" name="gender" value="male" required >Male
+               <input type="radio" name="gender" value="female">Female
+               </fieldset>
+               <fieldset>
+                   <legend>Contact Info</legend>
+                   <label for="address">Current Address</label><br>
+                   <textarea rows="10" cols="50" required placeholder="Enter current address"></textarea><br>
+                   <label for="phone">Phone Number</label><br>
+                   <input type="tel" name="phone" title="ensure its 10 digit long" required><br>
+                   <label for="email">Email Address</label><br>
+                   <input type="email" placeholder="youremail@something.com" name="email" required><br>
+            </fieldset>
+            <fieldset>
+                <legend>Course Details</legend>
+                <select name="courses" required>
+                    <option value="">--Select Course Below--</option>
+                    <option value="math">Math</option>
+                    <option value="physics">Physics</option>
+                    <option value="chemistry">Chemistry</option>
+                    <option value="homescience">homescience</option>
+                </select>
+            </fieldset><br>
+            <button class="btn" type="submit" title="confirm your details" onclick="pops();">Submit</button>
+            <button class="btn" type="reset" title="are you sure">Cancel</button>
+        </form>
+        <script>
+            function pops(){
+                alert("Data submitted successfully");
+            }</script>
+                      <script src="./assets/js/project.js"></script>
+        </body>
+</html> 

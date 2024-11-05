@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>converter</title>
+    </head>
+    <body>
+        <fieldset>
+            <input type="number" placeholder="fahreinheit" id="farrh"><br><br>
+            <input type="number" id="celcius" readonly>
+            <button type="submit" onclick="doConv();">convert</button>
+            <script>
+                function doConv(){
+                    var farrH=document.getElementById("farrh").value;
+                    farrH = Number(farrH);
+                    var C = (farrH - 32) / 1.8;
+                    C = Math.round(Number(C), 2);
+                    document.getElementById("celcius").value = C;
+                } 
+            </script>   
+        </fieldset>
+    </body>
+</html>

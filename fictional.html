@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+   <head>
+       <title>Fictional</title>
+       <link rel="stylesheet" href="./assets/project.css" />
+    </head>
+   <body>
+       <h3> <a href="library.html"><button class="btn">Home Page</button></a>
+        <a href="children.html">Children</a> |
+        <a href="fictional.html">Fiction</a> |
+        <a href="autobiograhies.html">Autobiograhies</a> |
+        <a href="registrationform.html">Registration</a>
+       </h3>
+       <hr />
+       <ul style="color:green;background-color: blanchedalmond;">
+           <h1>fictional novels</h1>
+           <hr>
+           <h3>our list of fictional novels consists of:</h3>
+           <li>The Mattress Circle</li>
+           <li>Harry Portter</li>
+           <li>City Runs Dark</li>
+           <li>Golden Circle</li>
+       </ul>
+    <fieldset>
+            <legend>Student Bio Data</legend>
+       <label for="student_name">Student Name</label><br>
+       <input type="text" id="student_name" title="enter both names" required onblur="getData();"/><br>
+       <script>
+        function name(){
+            alert("please insert both student's name");
+        }
+        function getData(){
+            var getName = document.getElementById("student_name").value;
+            alert(getName + " has been added successfully..");
+        }
+     </script>   
+    </fieldset>  
+    </body> 
+</html>
